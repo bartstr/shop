@@ -3,3 +3,4 @@
 /.coverage
 /temp/invoices/invoice_39.pdf
 /venv/
+/products/migrations/
