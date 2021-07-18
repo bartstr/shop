@@ -1,0 +1,14 @@
+Cześć {{ username }}!
+
+Oto potwierdzenie Twojego zamówienia w sklepie internetowym.
+
+Data płatności:  {{ payment_time }}
+Wartość zamówienia: {{ value }}
+Lista produktów:
+{% for product in products %}
+{{ product.product.name }} x{{ product.quantity }}
+
+{% endfor %}
+
+W załączeniu znajdziesz fakturę PRO-FORMA.
+Dziękujemy za wybór naszego sklepu!

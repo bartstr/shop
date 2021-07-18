@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>FAKTURA PRO FORMA</title>
+</head>
+<body>
+        <div style="margin-left = 10%; margin-right = 10%;">
+            <div>
+                <h1 style="text-align: center; margin-bottom: 10%; font-size: 18px;">Faktura pro forma #{{ order.id }} </h1>
+                <table>
+                <tr style="border: 1px solid black; font-size:14px; padding-top:10px; padding-bottom:10px;">
+                    <th>Sprzedawca</th>
+                    <th>Nabywca</th>
+                </tr>
+                <tr style="border: 0.5px solid black; font-size:12px; padding-top:10px; padding-bottom:10px;">
+                    <td style="padding-left: 5px">{{ vendor.company }}</td>
+                    {% if client.company and client.tax_number %}
+                    <td style="padding-left: 5px">{{ client.company }} {{ client.tax_number }} {{ client.name }} {{ client.surname }}
+                    </td>
+                    {% else %}
+                    <td style="padding-left: 5px">{{ client.name }} {{ client.surname }}
+                    </td>
+                    {% endif %}
+                </tr>
+                <tr style="border: 0.5px solid black; font-size:12px; padding-top:10px; padding-bottom:10px;">
+                    <td style="padding-left: 5px">{{ vendor.address1 }}</td>
+                    <td style="padding-left: 5px">{{ client.street }} {{ client.street_number }}/{{ client.apartment_number }}</td>
+                </tr>
+                <tr style="border: 0.5px solid black; font-size:12px; padding-top:10px; padding-bottom:10px;">
+                    <td style="padding-left: 5px">{{ vendor.address2}}</td>
+                    <td style="padding-left: 5px">{{ client.zip_code }} {{client.city }}</td>
+                </tr>
+            </table>
+            <br />
+            <table>
+                <tr style="border: 1px solid black; font-size:14px; padding-top:10px; padding-bottom:10px;">
+                    <th>Przedmiot</th>
+                    <th>Ilość</th>
+                    <th>Cena brutto</th>
+                </tr>
+                {% for product in products %}
+                <tr style="border: 0.5px solid black; font-size:12px; padding-top:10px; padding-bottom:10px;">
+                    <td style="padding-left: 5px">{{ product.product.name }}</td>
+                    <td style="padding-left: 5px">{{ product.quantity }}</td>
+                    <td style="padding-left: 5px">{{ product.product.price }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <br />
+            <br />
+            <p style="font-size:12px;">Ogółem do zapłaty {{ order.value }} zł.</p>
+            <p style="font-size:12px;">Zapłacono 0 zł</p>
+            <p style="font-size:12px;">Do zapłaty {{ order.value }} zł.</p>
+            <p style="font-size:12px;">Termin płatności {{ order.payment_time }}</p>
+            <br />
+            <hr />
+            <br />
+            <p>Wystawiono:</p>
+            <p>{{ vendor.name }}</p>
+            </div>
+        <div>
+    </div>
+        </div>
+    </body>
+</html>
