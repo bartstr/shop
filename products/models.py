@@ -17,11 +17,11 @@ class ClientAdress(models.Model):
     apartment_number = models.CharField(max_length=10)
 
     def __str__(self):
-        return 'Adres klienta {}'.format(self.client.username)
+        return 'Client address {}'.format(self.client.username)
 
     class Meta:
-        verbose_name = 'Adres klienta'
-        verbose_name_plural = 'Adresy klientów'
+        verbose_name = 'Client address'
+        verbose_name_plural = 'Clients address'
 
 
 class Product(models.Model):
