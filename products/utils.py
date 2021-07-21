@@ -18,7 +18,7 @@ def create_invoice(template_src, order, client):
 
 
 def send_email_with_invoice(order):
-    email_subject = 'Potwierdzenie zakupu Bartek Strzyga'
+    email_subject = 'Orderd confirmation - Bart Strzyga shop'
     email_body = render_to_string(
         'email/order_confirmation.txt', {
             'payment_time': order.payment_time, 'value': order.value, 'products': order.products.all()
@@ -27,6 +27,6 @@ def send_email_with_invoice(order):
     content = open('temp/invoices/invoice_{}.pdf'.format(order.id), 'rb')
     attachments = [('invoice_{}.pdf'.format(order.id), content.read(), 'application/pdf')]
     content.close()
-    email = EmailMessage(subject=email_subject, body=email_body, from_email='bartlomiej.strzyga@gmail.com',
+    email = EmailMessage(subject=email_subject, body=email_body, from_email='kontakt@poukladana.pl',
                          to=[order.user.email], attachments=attachments)
     email.send()
