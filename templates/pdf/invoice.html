@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FAKTURA PRO FORMA</title>
+    <title>Invoice</title>
 </head>
 <body>
         <div style="margin-left = 10%; margin-right = 10%;">
             <div>
-                <h1 style="text-align: center; margin-bottom: 10%; font-size: 18px;">Faktura pro forma #{{ order.id }} </h1>
+                <h1 style="text-align: center; margin-bottom: 10%; font-size: 18px;">Invoice for order #{{ order.id }} </h1>
                 <table>
                 <tr style="border: 1px solid black; font-size:14px; padding-top:10px; padding-bottom:10px;">
-                    <th>Sprzedawca</th>
-                    <th>Nabywca</th>
+                    <th>Seller</th>
+                    <th>Buyer</th>
                 </tr>
                 <tr style="border: 0.5px solid black; font-size:12px; padding-top:10px; padding-bottom:10px;">
                     <td style="padding-left: 5px">{{ vendor.company }}</td>
@@ -35,9 +35,9 @@
             <br />
             <table>
                 <tr style="border: 1px solid black; font-size:14px; padding-top:10px; padding-bottom:10px;">
-                    <th>Przedmiot</th>
-                    <th>Ilość</th>
-                    <th>Cena brutto</th>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price (tax incl)</th>
                 </tr>
                 {% for product in products %}
                 <tr style="border: 0.5px solid black; font-size:12px; padding-top:10px; padding-bottom:10px;">
@@ -49,14 +49,14 @@
             </table>
             <br />
             <br />
-            <p style="font-size:12px;">Ogółem do zapłaty {{ order.value }} zł.</p>
-            <p style="font-size:12px;">Zapłacono 0 zł</p>
-            <p style="font-size:12px;">Do zapłaty {{ order.value }} zł.</p>
-            <p style="font-size:12px;">Termin płatności {{ order.payment_time }}</p>
+            <p style="font-size:12px;">Subtotal  £{{ order.value }}.</p>
+            <p style="font-size:12px;">Paid £0</p>
+            <p style="font-size:12px;">To pay £{{ order.value }}.</p>
+            <p style="font-size:12px;">Due date {{ order.payment_time }}</p>
             <br />
             <hr />
             <br />
-            <p>Wystawiono:</p>
+            <p>Issued:</p>
             <p>{{ vendor.name }}</p>
             </div>
         <div>

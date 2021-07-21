@@ -24,10 +24,10 @@
 
 								<!-- Product Grid -->
 								{% if not products %}
-								<h3>Twój koszyk jest pusty</h3>
+								<h3>Basket is empty</h3>
 								{% else %}
-								<h3>Twoje zamówienie ma wartość {{ value }} PLN</h3>
-								<div class="red_button"><a href="/products/confirm_order">Zamów</a></div>
+								<h3>Subtotal: £{{ value }}</h3>
+								<div class="red_button"><a href="/products/confirm_order">Order</a></div>
 								<div class="product-grid">
 									<!-- Product -->
 									{% for product in products %}
@@ -39,9 +39,9 @@
 											<div class="product_info">
 												<h6 class="product_name"><a href="/products/details/{{ product.product.slug }}">{{ product.product.name }}</a></h6>
 												<h6>{{ product.product.producer }}</h6>
-												<h6>{{ product.quantity }} SZT</h6>
-												<div class="product_price">{{ product.product.price }} PLN</div>
-												<div class="red_button add_to_cart_button"><a href="/products/remove_from_cart/{{ product.product.slug }}">Usuń z koszyka</a></div>
+												<h6>{{ product.quantity }} Qty</h6>
+												<div class="product_price">£{{ product.product.price }}</div>
+												<div class="red_button add_to_cart_button"><a href="/products/remove_from_cart/{{ product.product.slug }}">Delete</a></div>
 											</div>
 										</div>
 									</div>
