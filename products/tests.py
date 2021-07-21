@@ -320,7 +320,7 @@ class ConfirmProductDeletionViewTest(TestCase):
         self.client.login(username='super_user', password='test')
         response = self.client.get(reverse('confirm_product_deletion', args=[self.slug]))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'Are you sure') # TODO when translating app change it!
+        self.assertContains(response, 'Are you sure')
 
     def test_confirm_product_deletion_view_fail(self):
         response = self.client.get(reverse('product_detail', args=[self.slug]))
@@ -403,7 +403,7 @@ class CartViewTest(TestCase):
         self.client.login(username='test_user', password='test')
         response = self.client.get(reverse('cart'))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'cart')  # TODO change while translating app
+        self.assertContains(response, 'cart')
 
     def test_cart_view_fail(self):
         response = self.client.get(reverse('cart'))
@@ -429,7 +429,7 @@ class RemoveProductFromCartViewTest(TestCase):
         self.assertContains(response, self.product.name)
         self.client.get(reverse('remove_product_from_cart', args=[self.slug]))
         response = self.client.get(reverse('cart'))
-        self.assertContains(response, 'empty')  # TODO translation
+        self.assertContains(response, 'empty')
 
     def remove_product_from_cart_view_fail(self):
         self.client.get(reverse('remove_product_from_cart', args=[self.slug]))
