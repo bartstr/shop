@@ -30,9 +30,9 @@ Bart Strzyga - Shop
 					<div class="col-md-6">
 						<div class="top_nav_left">
 							{% if user.is_authenticated %}
-							Witaj {{ user.username }}
+							Hello {{ user.username }}
 							{% else %}
-							Zaloguj się
+							<a style="text-decoration:none;" href="/products/log_in">Sign in</a>
 							{% endif %}
 						</div>
 					</div>
@@ -43,17 +43,17 @@ Bart Strzyga - Shop
 								<!-- My Account -->
 								<li class="account">
 									<a href="#">
-										Moje Konto
+										My account
 										<i class="fa fa-angle-down"></i>
 									</a>
 									<ul class="account_selection">
 										{% if user.is_authenticated %}
 											{% if user.is_staff %}
-											<li><a href="/products/add">Dodaj</a></li>
+											<li><a href="/products/add">Add product</a></li>
 											{% endif %}
-											<li><a href="/products/log_out"><i class="fa fa-sign-in" aria-hidden="true"></i>Wyloguj</a></li>
+											<li><a href="/products/log_out"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign out</a></li>
 										{% else %}
-											<li><a href="/products/log_in"><i class="fa fa-sign-in" aria-hidden="true"></i>Zaloguj</a></li>
+											<li><a href="/products/log_in"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign in</a></li>
 										{% endif %}
 									</ul>
 								</li>
@@ -75,8 +75,8 @@ Bart Strzyga - Shop
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
-								<li><a href="/">główna</a></li>
-								<li><a href="/products">sklep</a></li>
+								<li><a href="/">home</a></li>
+								<li><a href="/products">products</a></li>
 							</ul>
 							<ul class="navbar_user">
 								<li><a href="/products/search"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -114,8 +114,8 @@ Bart Strzyga - Shop
 						{% endif %}
 					</ul>
 				</li>
-				<li class="menu_item"><a href="/">główna</a></li>
-				<li class="menu_item"><a href="/products">sklep</a></li>
+				<li class="menu_item"><a href="/">home</a></li>
+				<li class="menu_item"><a href="/products">products</a></li>
 			</ul>
 		</div>
 	</div>
@@ -130,8 +130,8 @@ Bart Strzyga - Shop
 					<div class="benefit_item d-flex flex-row align-items-center">
 						<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
 						<div class="benefit_content">
-							<h6>darmowa dostawa</h6>
-							<p>Na terenie całego kraju.</p>
+							<h6>free delivery</h6>
+							<p>Anywhere in the UK!</p>
 						</div>
 					</div>
 				</div>
@@ -139,8 +139,8 @@ Bart Strzyga - Shop
 					<div class="benefit_item d-flex flex-row align-items-center">
 						<div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
 						<div class="benefit_content">
-							<h6>Kupując oszczędzasz</h6>
-							<p>Współpraca z wiodącymi bankami</p>
+							<h6>Benefits for returning buyers</h6>
+							<p>Secure payments</p>
 						</div>
 					</div>
 				</div>
@@ -148,8 +148,8 @@ Bart Strzyga - Shop
 					<div class="benefit_item d-flex flex-row align-items-center">
 						<div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
 						<div class="benefit_content">
-							<h6>45 dni na zwrot</h6>
-							<p>Kupujesz to co naprawdę chcesz</p>
+							<h6>45 days free return</h6>
+							<p>You are buying exactly what you want</p>
 						</div>
 					</div>
 				</div>
@@ -157,8 +157,8 @@ Bart Strzyga - Shop
 					<div class="benefit_item d-flex flex-row align-items-center">
 						<div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
 						<div class="benefit_content">
-							<h6>Otwarte cały tydzień</h6>
-							<p>W każdą niedzielę!</p>
+							<h6>Open 24/7</h6>
+							<p>Including bank holidays</p>
 						</div>
 					</div>
 				</div>

@@ -1,14 +1,14 @@
-Cześć {{ username }}!
+Hello {{ username }}!
 
-Oto potwierdzenie Twojego zamówienia w sklepie internetowym.
+This is your confirmation of order in shop.
 
-Data płatności:  {{ payment_time }}
-Wartość zamówienia: {{ value }}
-Lista produktów:
+Payment date:  {{ payment_time }}
+Subtotal: {{ value }}
+Your products:
 {% for product in products %}
 {{ product.product.name }} x{{ product.quantity }}
 
 {% endfor %}
 
-W załączeniu znajdziesz fakturę PRO-FORMA.
-Dziękujemy za wybór naszego sklepu!
+Invoice attached.
+Thank you for choose our shop!
