@@ -106,11 +106,11 @@ Bart Strzyga - Shop
 					<ul>
 						{% if user.is_authenticated %}
 						{% if user.is_staff %}
-							<li><a href="/products/add">Add Product</a></li>
+							<li><a href="/products/add/">Add Product</a></li>
 						{% endif %}
-						<li><a href="/user/log_out"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign Out</a></li>
+						<li><a href="/products/log_out/"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign Out</a></li>
 						{% else %}
-						<li><a href="/user/log_in"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+						<li><a href="/products/log_in/"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
 						{% endif %}
 					</ul>
 				</li>

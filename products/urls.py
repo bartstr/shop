@@ -17,5 +17,5 @@ urlpatterns = [
     path('cart/', cart, name='cart'),
     path('add_to_cart/<slug>', add_product_to_cart, name='add_product_to_cart'),
     path('remove_from_cart/<slug>', remove_product_from_cart, name='remove_product_from_cart'),
-    path('confirm_order', confirm_order, name='confirm_order'),
+    path('confirm_order/', confirm_order, name='confirm_order'),
 ]
