@@ -126,7 +126,7 @@ LOGIN_URL = '/products/log_in'
 LOGOUT_REDIRECT_URL = '/'
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH)
-MEDIA_URL = '/media/'
+MEDIA_URL = '/'
 # Email configuration
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = ''  # write gmail address here
