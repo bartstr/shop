@@ -9,6 +9,8 @@ Users with flag is_staff can add new products to shop, delete them, they cannot 
 Users cannot register (I decided to not focus on usability like this, they still may be added via admin panel).
 
 
-I used python 3.8 and django 3.2.5. All core packages you can find in requirements.txt
+I used python 3.8 and django 3.2.5. All core packages you can find in requirements.txt.
+
 Application is well covered with unittests.
+
 To build templates I used one of Colorlib's (https://colorlib.com/wp/templates/) frontend shop template with few changes.
