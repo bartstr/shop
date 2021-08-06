@@ -119,6 +119,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = [(os.path.join(PROJECT_PATH, 'static'))]
 STATIC_URL = '/static/'
+STATIC_ROOT = '/all/static'
 # Basic auth urls
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth
 LOGIN_REDIRECT_URL = '/'
