@@ -25,9 +25,9 @@ PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 # SECRET_KEY = 'django-insecure-eq_k^47a36wq0f270qqb=inb!09btr3gmjan_%kw8ed96#_sa8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['heroku.com']
 
 
 # Application definition
